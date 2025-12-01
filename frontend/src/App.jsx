@@ -7,6 +7,7 @@ import AddJobPage from "./pages/AddJobPage";
 import JobPage from "./pages/JobPage"; 
 import Navbar from "./components/Navbar";
 import NotFoundPage from "./pages/NotFoundPage"
+import EditJobPage from "./pages/EditJobPage";
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
               <Route path="/add-job" element={<AddJobPage />} />
               <Route path="/jobs/:id" element={<JobPage />} />
               <Route path='*' element={<NotFoundPage />} />
+              <Route path="/edit-job/:id" element={<EditJobPage />} />
             </Routes>
           </div>
         </BrowserRouter>
