@@ -1,32 +1,36 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 // pages & components
 import Home from "./pages/HomePage";
 import AddJobPage from "./pages/AddJobPage";
-import JobPage from "./pages/JobPage"; 
+import JobPage from "./pages/JobPage";
 import Navbar from "./components/Navbar";
 import NotFoundPage from "./pages/NotFoundPage"
 import EditJobPage from "./pages/EditJobPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () => {
 
-    return (
-      <div className="App">
-        <BrowserRouter>
-          <Navbar />
-          <div className="content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/add-job" element={<AddJobPage />} />
-              <Route path="/jobs/:id" element={<JobPage />} />
-              <Route path='*' element={<NotFoundPage />} />
-              <Route path="/edit-job/:id" element={<EditJobPage />} />
-            </Routes>
-          </div>
-        </BrowserRouter>
-      </div>
-    );
-  }
-  
-  export default App;
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/add-job" element={<AddJobPage />} />
+            <Route path="/jobs/:id" element={<JobPage />} />
+            <Route path='*' element={<NotFoundPage />} />
+            <Route path="/edit-job/:id" element={<EditJobPage />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
