@@ -44,8 +44,6 @@ const AddJobPage = () => {
       },
     };
 
-    const success = await addJob(newJob);
-
     addJob(newJob);
     console.log(newJob);
 
